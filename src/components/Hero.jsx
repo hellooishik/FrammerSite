@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Hero.css';
@@ -17,7 +17,7 @@ const Hero = () => {
     
     const tl = gsap.timeline({ repeat: -1 });
     
-    Array.from(words).forEach((word, i) => {
+    Array.from(words).forEach((word) => {
       tl.to(word, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" })
         .to(word, { y: -50, opacity: 0, duration: 0.5, ease: "power2.in", delay: 1.5 });
     });
