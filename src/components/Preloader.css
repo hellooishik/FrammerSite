@@ -1,0 +1,114 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(circle at 50% 50%, rgba(232, 84, 42, 0.08) 0%, transparent 60%), #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.scanner {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(232, 84, 42, 0.15), 0 0 14px rgba(232, 84, 42, 0.2);
+  animation: ring-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes ring-pulse {
+  0%, 100% {
+    box-shadow: inset 0 0 20px rgba(232, 84, 42, 0.15), 0 0 12px rgba(232, 84, 42, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: inset 0 0 28px rgba(232, 84, 42, 0.4), 0 0 22px rgba(232, 84, 42, 0.5);
+    border-color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.tick {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.65);
+  z-index: 4;
+}
+
+.tick.t { top: -8px; left: 50%; width: 1px; height: 16px; transform: translateX(-50%); }
+.tick.b { bottom: -8px; left: 50%; width: 1px; height: 16px; transform: translateX(-50%); }
+.tick.l { left: -8px; top: 50%; height: 1px; width: 16px; transform: translateY(-50%); }
+.tick.r { right: -8px; top: 50%; height: 1px; width: 16px; transform: translateY(-50%); }
+
+.sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(232, 84, 42, 0.6) 0deg, rgba(232, 84, 42, 0.25) 25deg, rgba(232, 84, 42, 0.05) 55deg, transparent 90deg, transparent 360deg);
+  mask: radial-gradient(circle, black 98%, transparent 100%);
+  -webkit-mask: radial-gradient(circle, black 98%, transparent 100%);
+  animation: sweep-rotate 2.2s linear infinite;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+@keyframes sweep-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.scan-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 84, 42, 0.4);
+  opacity: 0;
+  animation: scan-out 2.4s ease-out infinite;
+  z-index: 1;
+}
+
+.scan-ring.delay {
+  animation-delay: 1.2s;
+}
+
+@keyframes scan-out {
+  0% { transform: scale(0.25); opacity: 0.8; }
+  80% { opacity: 0.1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.blip {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 190, 140, 1);
+  box-shadow: 0 0 3px rgba(232, 84, 42, 1), 0 0 8px rgba(232, 84, 42, 0.7), 0 0 14px rgba(232, 84, 42, 0.35);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  animation: blip-glow 2.2s linear infinite;
+}
+
+@keyframes blip-glow {
+  0% { opacity: 1; }
+  25% { opacity: 0.5; }
+  60% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+.progress {
+  margin-top: 3rem;
+  letter-spacing: 0.2em;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

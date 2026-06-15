@@ -1,0 +1,16 @@
+.highlight-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.highlight-headline {
+  font-size: clamp(3rem, 6vw, 7rem);
+  line-height: 1.1;
+}
+
+.highlight-char {
+  display: inline-block;
+}

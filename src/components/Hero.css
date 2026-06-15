@@ -1,0 +1,54 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+}
+
+.hero-content {
+  padding: 4rem;
+  z-index: 1;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  max-width: 20ch;
+  margin-bottom: 1rem;
+}
+
+.hero-rotating-wrapper {
+  display: flex;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 700;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-rotating-words {
+  position: relative;
+  height: 1.2em;
+  overflow: hidden;
+  width: 300px;
+}
+
+.hero-rotating-words span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.hero-hud {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.hud-line {
+  margin-bottom: 0.25rem;
+}

@@ -1,0 +1,109 @@
+.feature-blocks {
+  padding-top: 4rem;
+}
+
+.feature-section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.features-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.feature-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .feature-block {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+  
+  .feature-reverse .feature-text {
+    order: 2;
+  }
+  
+  .feature-reverse .feature-visual {
+    order: 1;
+  }
+}
+
+.feature-text h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.feature-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.feature-list {
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.feature-list li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.feature-progress {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-border);
+  position: relative;
+}
+
+.feature-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-accent);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.feature-visual {
+  width: 100%;
+  aspect-ratio: 4/3;
+  position: relative;
+}
+
+.visual-placeholder {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(232,84,42,0.1) 0%, rgba(10,10,10,1) 80%);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-text {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  opacity: 0.5;
+}
